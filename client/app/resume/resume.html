@@ -1,0 +1,45 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+	<div class="well">
+		<h3>Education</h3>
+			<span>Case Western Reserve University, Cleveland, OH</span><p class="pull-right">May 2013</p>
+			<p>Computer Science, B.S.</p>
+		<h3>Skills</h3>
+			<h4>Languages</h4>
+			<p>Java, Javascript, HTML, CSS, SQL, C#, Limited C</p>
+			<h4>Database Systems</h4>
+			<p>Oracle, MongoDB, MySQL, SQLite</p>
+		<h3>Professional Experience Summary</h3>
+			<table class="table table-striped">
+				<tr>
+					<th>Company</th>
+					<th>Dates at Company</th>
+					<th>Job Title</th>
+				</tr>
+				<tr ng-repeat="job in jobExperiences" ng-if="job.company !== 'Personal Projects'">
+					<td>{{job.company}}</td>
+					<td>{{job.startDate}}-{{job.endDate}}</td>
+					<td>{{job.title}}</td>
+				</tr>
+			</table>
+		<h3>Professional Experience</h3>
+			<div class="professional-exp" ng-repeat="job in jobExperiences">
+				<span><span class="company-name">{{job.company}}</span> {{job.location}} <span class="pull-right">{{job.startDate}}-{{job.endDate}}</span> </span><br>
+				{{job.title}}
+				<ul>
+					<li class="job-description" ng-repeat="description in job.descriptions">
+						<div ng-bind-html="description"></div>
+					</li>
+				</ul>
+			</div>
+	</div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p>Contact |
+        <a href="mailto:mjr127@case.edu">mjr127@case.edu</a> | 
+         281.785.0978</p>
+  </div>
+</footer>
