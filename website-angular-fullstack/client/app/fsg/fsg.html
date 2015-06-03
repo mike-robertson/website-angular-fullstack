@@ -1,0 +1,36 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+	<h1>Falling Sand Game</h1>
+	<div  id="gameContainer"></div>	
+	
+	<div class='fsg-buttons button-toolbar'>
+		<div class="btn-group">
+			<div id="num-particles">0 particles</div>
+		</div>
+		<div class='btn-group'>				
+			<button class='btn btn-default' id='fsg-dec-brush' ng-click="decBrushSize()">-</button>
+			<button class='btn btn-default' id='fsg-brush-size'>{{brushSize}}</button>
+			<button class='btn btn-default' id='fsg-inc-brush'ng-click="incBrushSize();">+</button>
+		</div>
+		<div class="btn-group">
+			<select class='form-control' id='fsg-type-select'>
+				<option value='0'>Wall</option>
+				<option value='1'>Sand</option>
+				<option value='2'>Water</option>
+				<option value='3'>Acid</option>
+				<option value='4'>Wax</option>
+				<option value='5'>Fire</option>
+				<option value='6'>Plant</option>
+			</select>
+		</div>
+	</div>
+
+</div>
+<footer class="footer">
+  <div class="container">
+      <p>Contact |
+        <a href="mailto:mjr127@case.edu">mjr127@case.edu</a> | 
+         281.785.0978</p>
+  </div>
+</footer>
